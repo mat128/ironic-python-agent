@@ -49,7 +49,9 @@ coreos:
         [Unit]
         Description=Ironic Python Agent
         After=ironic-python-agent-container-creation.service
+        After=systemd-networkd.service
         Requires=ironic-python-agent-container-creation.service
+        Requires=systemd-networkd.service
 
         [Service]
         ExecStart=/usr/bin/systemd-nspawn -D /opt/ironic-python-agent \
