@@ -41,5 +41,7 @@ dd if=/dev/zero of=$DEVICE bs=512 count=10
 log "Imaging $IMAGEFILE to $DEVICE"
 qemu-img convert -t directsync -O raw $IMAGEFILE $DEVICE
 sync
+sync
+sync
 
 log "${DEVICE} imaged successfully!"
